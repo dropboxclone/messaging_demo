@@ -1,0 +1,25 @@
+apply plugin: 'java'
+
+repositories {
+    mavenCentral()
+}
+
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
+
+dependencies {
+    compile "com.hazelcast:hazelcast:3.5.3"
+}
+
+jar {
+    baseName = 'hazelcast-msg'
+    version =  '0.1.0'
+}
+
+apply plugin: 'application'
+
+mainClassName = 'Msg.BroadMess'
+
+task wrapper(type: Wrapper) {
+    gradleVersion = '2.8'
+}
